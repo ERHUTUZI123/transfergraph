@@ -92,7 +92,7 @@ class GraphAttributes():
             e1 = self.data_features[k1]
             e2 = self.data_features[k2]
             if sim_method == 'correlation':
-                similarity = distance.correlation(e1, e1)  # cosine(e1,e1) #1 - distance.cosine(e1,e1)
+                similarity = distance.correlation(e1, e2)  # cosine(e1,e1) #1 - distance.cosine(e1,e1)
             elif sim_method == 'euclidean':
                 similarity = distance.euclidean(e1, e2)
 
