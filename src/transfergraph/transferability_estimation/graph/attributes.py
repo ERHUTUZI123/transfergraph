@@ -120,7 +120,9 @@ class GraphAttributes():
         logger.info(f'\n\n ====  Save correlation to path: {path}')
         df_tmp.to_csv(path)
 
-        return torch.stack([torch.tensor(data_source), torch.tensor(data_target)]), torch.tensor(attr)  # dim=0
+        edge_index_tensor = torch.stack([torch.tensor(data_source), torch.tensor(data_target)])
+        edge_attr_tensor = torch.tensor(attr)
+        return edge_index_tensor, edge_attr_tensor
 
     def get_edge_index(self, method='accuracy', ratio=1.0):  # method='score'
 
