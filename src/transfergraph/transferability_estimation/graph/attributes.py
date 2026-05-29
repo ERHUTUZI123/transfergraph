@@ -221,7 +221,7 @@ class GraphAttributes():
                     features = np.zeros(INPUT_SHAPE * INPUT_SHAPE)
                     model_feat.append(features)
                 continue
-            if model_match_rows['model'].values[0] == np.nan:
+            if pd.isna(model_match_rows['model'].values[0]):
                 # delete_model_row_idx.append(i)
                 model_list.append(row['model'])
                 continue
